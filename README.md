@@ -124,7 +124,7 @@ pytest · unittest · Postman · Git · Concurrency Testing
 ## Links
 
 - GitHub: [AlaaBadawii](https://github.com/AlaaBadawii)
-- Portfolio: [AlaaBadawii.github.io](https://github.com/AlaaBadawii/AlaaBadawii.github.io)
+- Portfolio: [AlaaBadawii.github.io](https://alaabadawii.github.io)
 - Resume: [Resume](https://drive.google.com/drive/folders/1svf-60hjMWKHKH9x_0TeOQ2A6fy18WGZ71)
 - Email: [alaabadawii404@gmail.com](mailto:alaabadawii404@gmail.com)
 - LinkedIn: [alaabadawii](https://www.linkedin.com/in/alaabadawii/)
