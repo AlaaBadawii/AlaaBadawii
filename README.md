@@ -1,130 +1,150 @@
 # Hi, I'm Alaa Badawii 👋
 
-**Backend Software Engineer building production-oriented backend and AI systems.**
+**Software & AI Systems Engineer | Building Intelligent Products**
 
-I build backend systems in Python with a focus on API design, relational data modeling, authentication, correctness, and maintainable architecture. I'm extending that foundation into AI agents and AI-powered systems.
+I build software and AI-powered applications using Python, combining backend systems, LLM applications, RAG, and agentic workflows.
 
-📍 Cairo, Egypt · Open to backend engineering and AI-systems roles
+I care about the whole system: how its components work together, how data and decisions stay reliable, and what checks are needed to make AI-powered features trustworthy and useful.
 
----
-
-## What I'm building now
-
-- **Quizey V2** — re-architecting an exam platform into a production-oriented backend. The core loop is built around versioned exams, auto-grading, JWT authentication, DB-backed RBAC, and a 254-test suite. Phase 2 focuses on attempt lifecycle, timing, idempotent submission, and audit integrity.
-
-- **Evaluator Core** — an AI grading engine using a two-stage Judge + Critic approach. Deterministic scoring is recomputed in code, while AI steps are tested with fake LLMs before real API calls. Currently in progress.
-
-- **DevOps** — building practical CI/CD and containerization experience with Docker, Docker Compose, Jenkins, and GitHub Actions. Kubernetes is the next step in this path.
+📍 Cairo, Egypt · Open to Software Engineering, Backend Engineering, and AI Engineering opportunities.
 
 ---
 
-## Featured Work
+## What I'm Working On
 
-### Quizey V2 — AI-Assisted Assessment Platform
-
-[`Quizey-V2`](https://github.com/AlaaBadawii/Quizey-V2) · *In progress*
-
-My primary backend engineering project, focused on building an assessment platform with production-oriented design and correctness guarantees.
-
-- **Copy-on-write exam versioning** — editing a published exam creates an immutable version, keeping in-flight attempts consistent and gradable.
-- **Attempt lifecycle as a state machine** — `in_progress → paused → submitted → graded → archived`, with transitions guarded at the ORM layer.
-- **Idempotent submission under concurrency** — 10 parallel `/submit` calls produce exactly one graded attempt in a test-verified concurrency scenario.
-- **Database as the source of truth for roles** — authorization is not dependent on JWT role claims.
-- **JWT access + refresh authentication** with DB-backed refresh-token invalidation.
-- **Atomic transactions** for operations that must succeed or fail as a unit.
-- **Immutable audit logging** at both ORM and database-trigger levels.
-- **SQLAlchemy + Alembic** for persistence and schema migrations.
-- **254 passing tests** covering the implemented behavior.
-
-### AI Agents
-
-[`AI-Agents`](https://github.com/AlaaBadawii/AI-Agents)
-
-Framework-free implementations built to understand the mechanics behind agentic systems rather than hiding them behind an abstraction layer.
-
-- Agent execution loop
-- Tool-calling protocol
-- Tool registry
-- Memory
-- Multi-agent orchestration
-- Routing
-
-### Evaluator Core — AI Grading Engine
-
-[`AI-Agents`](https://github.com/AlaaBadawii/AI-Agents) · [`evaluator_core/`](https://github.com/AlaaBadawii/AI-Agents/tree/main/evaluator_core)
-
-An in-progress AI evaluation system designed around a two-stage **Judge + Critic** workflow.
-
-- Fixed rubric-based evaluation
-- Deterministic scoring recomputed in Python
-- Low-confidence results can be flagged for human review
-- Fake-LLM testing to keep tests deterministic and avoid unnecessary API calls
-- Designed as the foundation for Quizey's future AI-assisted assessment capabilities
-
-### Docker & CI/CD
-
-[`devops-lab`](https://github.com/AlaaBadawii/devops-lab) · [`jenkins-practice`](https://github.com/AlaaBadawii/jenkins-practice)
-
-Hands-on work around taking backend applications from local development toward reproducible builds and automated testing.
-
-- Docker Compose with Flask + MySQL
-- Named volumes and environment-driven configuration
-- Tests running inside Docker-based CI
-- Jenkins
-- GitHub Actions
-- Debugging real CI/environment issues rather than only following tutorials
-
-### Quizey V1 — Legacy Assessment API
-
-[`Quizey`](https://github.com/AlaaBadawii/Quizey)
-
-The predecessor to Quizey V2 and an earlier example of my backend work.
-
-- Versioned REST API (`/api/v1`)
-- JWT authentication
-- Email verification
-- PostgreSQL + Alembic
-- Automatic grading
+- **Quizey V2** — building the backend foundation of an AI-first assessment and training platform. Current work focuses on assessment versioning, attempt lifecycle, authentication, data integrity, and platform services.
+- **AI Agents From Scratch** — implementing agent mechanics in Python to understand tool calling, agent execution, memory, routing, and multi-agent orchestration.
+- **Evaluator Core** — developing a two-stage Judge + Critic evaluation engine, with deterministic scoring, validation, and human-review escalation.
 
 ---
 
-## Tech Stack
+## Selected Work
 
-**Backend**  
-Python · Flask · FastAPI · SQLAlchemy · REST APIs
+### Quizey V2 — AI-First Assessment & Training Platform
 
-**Databases**  
-PostgreSQL · MySQL · MongoDB · Redis
+*In progress · Private repository*
 
-**AI**  
-LLM Applications · Tool Calling · Agentic Systems · Multi-Agent Orchestration · RAG
+My main software engineering project: an assessment and training platform designed around the idea of understanding what learners already know before guiding them toward the right learning path.
 
-**DevOps & Infrastructure**  
+The current implementation focuses on building a reliable backend foundation. AI-powered assessment and learning capabilities are part of the product roadmap.
+
+**Engineering highlights**
+
+- **Modular monolith architecture** using Python, Flask, SQLAlchemy, and MySQL.
+- **Copy-on-write exam versioning** to preserve published versions and keep existing attempts consistent.
+- **Frozen attempt papers** so grading remains tied to the exact assessment presented to the learner.
+- **Attempt lifecycle management** with explicit state transitions and guarded operations.
+- **Idempotent submission** to protect against duplicate requests.
+- **JWT authentication** with Redis-backed token revocation and fail-closed behavior when the revocation store is unavailable.
+- **Database-backed authorization** with the database remaining the source of truth for user roles.
+- **Audit logging and transactional integrity** for operations that require reliable state changes.
+- **Automated testing** covering business rules, security behavior, and system reliability.
+
+**Current test status:** 1,116 passing tests, plus 181 subtests.
+
+---
+
+### AI Agents From Scratch
+
+[Repository: AI-Agents](https://github.com/AlaaBadawii/AI-Agents)
+
+A collection of framework-free implementations built to understand the mechanics behind agentic systems rather than hide them behind abstractions.
+
+The repository progresses from individual agents to multi-agent orchestration and AI evaluation.
+
+**Implemented projects**
+
+- **Readme Agent** — explores project inspection, tool registration, and schema generation for README creation.
+- **Agent Assistant** — a conversational agent built around the OpenAI-style tool-calling protocol.
+- **Multi-Agent System** — an orchestrator and specialized agent for generating and validating multiple-choice questions.
+
+**Evaluator Core — In Progress**
+
+A two-stage AI evaluation engine based on a Judge + Critic workflow.
+
+- Fixed rubric-based evaluation.
+- Deterministic scoring recomputed in Python.
+- Low-confidence or conflicting evaluations can be escalated for human review.
+- Fake-LLM testing to keep tests deterministic and avoid unnecessary API calls.
+
+The implemented agents include Dockerfiles and are integrated into the repository's Docker Compose setup.
+
+---
+
+### Clinical RAG System — Creativa AI Hackathon
+
+*Team Lead · Five-person team · August 2026*
+
+Led a team of five in developing a clinical Retrieval-Augmented Generation (RAG) system based on NICE NG217 guidelines.
+
+My contribution covered system architecture, the FastAPI backend, hybrid retrieval, cross-encoder reranking, LLM generation, and deterministic citation validation.
+
+**Evaluation results**
+
+- Improved Precision@1 from 35% to 85%.
+- Achieved 87.9% Mean Reciprocal Rank (MRR).
+- Reached 100% recall.
+- Achieved 100% grounded responses.
+- Produced 130/130 traceable citations.
+
+The project focused on improving retrieval quality and ensuring generated answers remained grounded in their source material.
+
+---
+
+### DevOps & CI/CD Practice
+
+[devops-lab](https://github.com/AlaaBadawii/devops-lab) · [jenkins-practice](https://github.com/AlaaBadawii/jenkins-practice)
+
+Practical work on making backend applications easier to build, test, and run consistently.
+
+- Docker and Docker Compose.
+- Flask + MySQL containerized environments.
+- Named volumes and environment-driven configuration.
+- Automated testing in container-based workflows.
+- Jenkins and GitHub Actions.
+- Debugging CI and environment configuration issues.
+
+---
+
+## Technical Toolbox
+
+**Software & Backend Engineering**
+
+Python · Flask · FastAPI · SQLAlchemy · REST APIs · API Design · Software Architecture
+
+**Databases & Data**
+
+MySQL · PostgreSQL · SQLite · Redis · Relational Data Modeling
+
+**AI Engineering**
+
+Large Language Models (LLMs) · RAG · Tool Calling · AI Agents · Multi-Agent Systems · LLM Evaluation · Prompt Engineering
+
+**DevOps & Infrastructure**
+
 Docker · Docker Compose · GitHub Actions · Jenkins · Linux · Bash
 
-**Testing & Tools**  
-pytest · unittest · Postman · Git · Concurrency Testing
+**Testing & Quality**
+
+pytest · unittest · API Testing · Concurrency Testing · Postman · Alembic
 
 ---
 
-## How I Work
+## How I Approach Engineering
 
-- **Model lifecycle explicitly.** When a domain has meaningful states, I encode those states as a state machine so invalid transitions are prevented rather than handled accidentally.
-
-- **Design and prove correctness.** Idempotent submissions are tested under concurrent requests before being trusted, rather than assuming the implementation is safe.
-
-- **Don't trust an LLM with deterministic work.** AI can evaluate or reason, but deterministic calculations are recomputed and verified in code.
-
-- **Learn mechanics before frameworks.** I build foundational AI concepts without frameworks when possible, then introduce abstractions once I understand what they are solving.
-
-- **Prefer reproducible engineering.** Containers, automated tests, migrations, and CI are part of the development process—not an afterthought.
+- **Think about the whole system.** I care about how APIs, data, business logic, infrastructure, and AI capabilities work together to create a complete product.
+- **Make correctness testable.** Important business rules and state transitions should be enforced and verified, not left to assumptions.
+- **Keep deterministic work deterministic.** When AI is involved in evaluation or reasoning, calculations and critical validations should still be independently verified in code.
+- **Build AI with safeguards.** Retrieval quality, evaluation, validation, and human review matter when AI outputs affect users.
+- **Understand the mechanics.** I like exploring how things work underneath before relying on frameworks and abstractions.
+- **Prefer reproducible engineering.** Automated tests, migrations, containers, and CI help make changes safer and easier to maintain.
 
 ---
 
-## Links
+## Connect With Me
 
-- GitHub: [AlaaBadawii](https://github.com/AlaaBadawii)
-- Portfolio: [AlaaBadawii.github.io](https://alaabadawii.github.io)
-- Resume: [Resume](https://drive.google.com/drive/folders/1svf-60hjMWKHKH9x_0TeOQ2A6fy18WGZ71)
-- Email: [alaabadawii404@gmail.com](mailto:alaabadawii404@gmail.com)
-- LinkedIn: [alaabadawii](https://www.linkedin.com/in/alaabadawii/)
+- **GitHub:** [AlaaBadawii](https://github.com/AlaaBadawii)
+- **Portfolio:** [alaabadawii.github.io](https://alaabadawii.github.io)
+- **Resume:** [View Resume](https://drive.google.com/drive/folders/1svf-60hjMWKHKH9x_0TeOQ2A6fy18WGZ71)
+- **Email:** [alaabadawii404@gmail.com](mailto:alaabadawii404@gmail.com)
+- **LinkedIn:** [Alaa Badawii](https://www.linkedin.com/in/alaabadawii/)
