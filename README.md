@@ -44,6 +44,49 @@ The current implementation focuses on building a reliable backend foundation. AI
 
 ---
 
+### Clinical RAG System — Creativa AI Hackathon
+[Repository: AI-Agents](https://github.com/AlaaBadawii/grounded-rag-ng217)
+
+*Team Lead · Five-person team · August 2026*
+
+Led a team of five in developing a clinical Retrieval-Augmented Generation (RAG) system based on NICE NG217 guidelines.
+
+My contribution covered system architecture, the FastAPI backend, hybrid retrieval, cross-encoder reranking, LLM generation, and deterministic citation validation.
+
+**Evaluation results**
+
+- Improved Precision@1 from 35% to 85%.
+- Achieved 87.9% Mean Reciprocal Rank (MRR).
+- Reached 100% recall.
+- Achieved 100% grounded responses.
+- Produced 130/130 traceable citations.
+
+The project focused on improving retrieval quality and ensuring generated answers remained grounded in their source material.
+
+---
+
+### Abu Prompt — LinkedIn Personal Branding Agent
+[Repository: AI-Agents](https://github.com/AlaaBadawii/PersonalBrandingAgent)
+
+A deterministic-first AI agent designed to support consistent, context-aware LinkedIn content creation through a scheduled workflow rather than a conversational chatbot.
+
+The system combines a personal knowledge base, retrieval-augmented generation (RAG), LLM reasoning, and validation to produce content grounded in the user's actual experience and professional background.
+
+**Engineering highlights**
+
+- **Scheduled execution** using a controlled workflow rather than relying on manual chatbot interactions.
+- **RAG-powered personal knowledge base** using Chroma to retrieve relevant context.
+- **LLM reasoning** to transform retrieved information into relevant LinkedIn content.
+- **Content validation** to keep generated outputs grounded and consistent.
+- **Persistent state management** using SQLite.
+- **Publishing history** to track previous content and prevent unnecessary duplication.
+- **Controlled publishing** with execution limits and safeguards.
+- **Deterministic-first design** to keep workflow decisions and important checks outside the LLM.
+
+The project explores how retrieval, reasoning, validation, and workflow automation can work together to build a more reliable AI-powered application.
+
+---
+
 ### AI Agents From Scratch
 
 [Repository: AI-Agents](https://github.com/AlaaBadawii/AI-Agents)
@@ -68,26 +111,6 @@ A two-stage AI evaluation engine based on a Judge + Critic workflow.
 - Fake-LLM testing to keep tests deterministic and avoid unnecessary API calls.
 
 The implemented agents include Dockerfiles and are integrated into the repository's Docker Compose setup.
-
----
-
-### Clinical RAG System — Creativa AI Hackathon
-
-*Team Lead · Five-person team · August 2026*
-
-Led a team of five in developing a clinical Retrieval-Augmented Generation (RAG) system based on NICE NG217 guidelines.
-
-My contribution covered system architecture, the FastAPI backend, hybrid retrieval, cross-encoder reranking, LLM generation, and deterministic citation validation.
-
-**Evaluation results**
-
-- Improved Precision@1 from 35% to 85%.
-- Achieved 87.9% Mean Reciprocal Rank (MRR).
-- Reached 100% recall.
-- Achieved 100% grounded responses.
-- Produced 130/130 traceable citations.
-
-The project focused on improving retrieval quality and ensuring generated answers remained grounded in their source material.
 
 ---
 
