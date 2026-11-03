@@ -23,6 +23,7 @@ I care about the whole system: how its components work together, how data and de
 ### Quizey V2 — AI-First Assessment & Training Platform
 
 *In progress · Private repository*
+*But, check description: https://github.com/AlaaBadawii/quizey-platform*
 
 My main software engineering project: an assessment and training platform designed around the idea of understanding what learners already know before guiding them toward the right learning path.
 
