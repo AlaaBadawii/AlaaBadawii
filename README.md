@@ -1,10 +1,12 @@
 # Hi, I'm Alaa Badawii 👋
 
-**Software & AI Systems Engineer | Building Intelligent Products**
+**Software & AI Engineer | Building Reliable AI-Powered Products**
 
-I build software and AI-powered applications using Python, combining backend systems, LLM applications, RAG, and agentic workflows.
+I build software and AI-powered applications using Python, combining backend systems, databases, APIs, and AI capabilities.
 
-I care about the whole system: how its components work together, how data and decisions stay reliable, and what checks are needed to make AI-powered features trustworthy and useful.
+I enjoy looking at the bigger picture: understanding how the different components work together and making sure the final product is reliable, useful, and valuable to its users.
+
+For me, building AI products isn't just about making the AI work. It's about building the whole product around it, with the right checks and safeguards to protect users, earn their trust, and deliver tangible value.
 
 📍 Cairo, Egypt · Open to Software Engineering, Backend Engineering, and AI Engineering opportunities.
 
@@ -13,8 +15,6 @@ I care about the whole system: how its components work together, how data and de
 ## What I'm Working On
 
 - **Quizey V2** — building the backend foundation of an AI-first assessment and training platform. Current work focuses on assessment versioning, attempt lifecycle, authentication, data integrity, and platform services.
-- **AI Agents From Scratch** — implementing agent mechanics in Python to understand tool calling, agent execution, memory, routing, and multi-agent orchestration.
-- **Evaluator Core** — developing a two-stage Judge + Critic evaluation engine, with deterministic scoring, validation, and human-review escalation.
 
 ---
 
@@ -24,7 +24,7 @@ I care about the whole system: how its components work together, how data and de
 
 *In progress · Private repository*
 
-*But you can check description here: https://github.com/AlaaBadawii/quizey-platform*
+[Public project overview](https://github.com/AlaaBadawii/quizey-platform)
 
 My main software engineering project: an assessment and training platform designed around the idea of understanding what learners already know before guiding them toward the right learning path.
 
@@ -47,11 +47,12 @@ The current implementation focuses on building a reliable backend foundation. AI
 ---
 
 ### Clinical RAG System — Creativa AI Hackathon
-[Repository: AI-Agents](https://github.com/AlaaBadawii/grounded-rag-ng217)
+
+[Repository: Grounded RAG over NICE NG217](https://github.com/AlaaBadawii/grounded-rag-ng217)
 
 *Team Lead · Five-person team · August 2026*
 
-Led a team of five in developing a clinical Retrieval-Augmented Generation (RAG) system based on NICE NG217 guidelines.
+Led a five-person team in developing a clinical Retrieval-Augmented Generation (RAG) system based on NICE NG217 guidelines during a 40+ hour hackathon.
 
 My contribution covered system architecture, the FastAPI backend, hybrid retrieval, cross-encoder reranking, LLM generation, and deterministic citation validation.
 
@@ -59,7 +60,8 @@ My contribution covered system architecture, the FastAPI backend, hybrid retriev
 
 - Improved Precision@1 from 35% to 85%.
 - Achieved 87.9% Mean Reciprocal Rank (MRR).
-- Reached 100% recall.
+- Reached 100% candidate recall.
+- Achieved 75% answer correctness.
 - Achieved 100% grounded responses.
 - Produced 130/130 traceable citations.
 
@@ -68,7 +70,8 @@ The project focused on improving retrieval quality and ensuring generated answer
 ---
 
 ### Abu Prompt — LinkedIn Personal Branding Agent
-[Repository: AI-Agents](https://github.com/AlaaBadawii/PersonalBrandingAgent)
+
+[Repository: Personal Branding Agent](https://github.com/AlaaBadawii/PersonalBrandingAgent)
 
 A deterministic-first AI agent designed to support consistent, context-aware LinkedIn content creation through a scheduled workflow rather than a conversational chatbot.
 
@@ -89,30 +92,21 @@ The project explores how retrieval, reasoning, validation, and workflow automati
 
 ---
 
-### AI Agents From Scratch
+### Evaluator Core — AI Evaluation Engine
 
-[Repository: AI-Agents](https://github.com/AlaaBadawii/AI-Agents)
+*In progress*
 
-A collection of framework-free implementations built to understand the mechanics behind agentic systems rather than hide them behind abstractions.
+A two-stage AI evaluation engine based on a Judge + Critic workflow, designed to evaluate generated outputs while keeping critical scoring and validation independently verifiable.
 
-The repository progresses from individual agents to multi-agent orchestration and AI evaluation.
+**Engineering highlights**
 
-**Implemented projects**
-
-- **Readme Agent** — explores project inspection, tool registration, and schema generation for README creation.
-- **Agent Assistant** — a conversational agent built around the OpenAI-style tool-calling protocol.
-- **Multi-Agent System** — an orchestrator and specialized agent for generating and validating multiple-choice questions.
-
-**Evaluator Core — In Progress**
-
-A two-stage AI evaluation engine based on a Judge + Critic workflow.
-
-- Fixed rubric-based evaluation.
+- Rubric-based evaluation with structured outputs.
 - Deterministic scoring recomputed in Python.
+- Judge + Critic evaluation workflow.
 - Low-confidence or conflicting evaluations can be escalated for human review.
 - Fake-LLM testing to keep tests deterministic and avoid unnecessary API calls.
 
-The implemented agents include Dockerfiles and are integrated into the repository's Docker Compose setup.
+The goal is to make AI evaluation more consistent, testable, and suitable for applications where correctness matters.
 
 ---
 
@@ -143,7 +137,7 @@ MySQL · PostgreSQL · SQLite · Redis · Relational Data Modeling
 
 **AI Engineering**
 
-Large Language Models (LLMs) · RAG · Tool Calling · AI Agents · Multi-Agent Systems · LLM Evaluation · Prompt Engineering
+Large Language Models (LLMs) · RAG · Tool Calling · AI Agents · Multi-Agent Systems · LLM Evaluation · Prompt Engineering · Hybrid Retrieval · Cross-Encoder Reranking
 
 **DevOps & Infrastructure**
 
@@ -157,7 +151,7 @@ pytest · unittest · API Testing · Concurrency Testing · Postman · Alembic
 
 ## How I Approach Engineering
 
-- **Think about the whole system.** I care about how APIs, data, business logic, infrastructure, and AI capabilities work together to create a complete product.
+- **Think about the whole product.** I care about how APIs, data, business logic, infrastructure, and AI capabilities work together to create a complete application.
 - **Make correctness testable.** Important business rules and state transitions should be enforced and verified, not left to assumptions.
 - **Keep deterministic work deterministic.** When AI is involved in evaluation or reasoning, calculations and critical validations should still be independently verified in code.
 - **Build AI with safeguards.** Retrieval quality, evaluation, validation, and human review matter when AI outputs affect users.
